@@ -274,6 +274,8 @@ public class CompositeRenderer {
 		ImmediateState.temporarilyIgnorePass = true;
 
 		GLDebug.pushGroup(20 + compositePass.ordinal(), compositePass.name().toLowerCase(Locale.ROOT));
+		RenderSystem.disableBlend();
+		GlStateManager._colorMask(true, true, true, true);
 
 		com.mojang.blaze3d.pipeline.RenderTarget main = Minecraft.getInstance().getMainRenderTarget();
 
