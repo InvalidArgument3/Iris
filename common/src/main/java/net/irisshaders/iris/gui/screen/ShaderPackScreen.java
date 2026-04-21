@@ -371,9 +371,6 @@ public class ShaderPackScreen extends Screen implements HudHideable {
 
 	@Override
 	protected void renderBlurredBackground(float pScreen0) {
-		// NeoForge 1.21.1 modpacks can trigger a GUI composition bug where
-		// post-processing blur wipes this screen while in-world.
-		// Keep the menu readable by skipping Iris's custom blur pass only here.
 		if (this.minecraft.level != null) {
 			this.minecraft.getMainRenderTarget().bindWrite(false);
 			return;
